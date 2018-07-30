@@ -1,0 +1,178 @@
+ /*
+ | CSS file used for styling the SVG elements
+ |
+ |
+ | MIT License
+ |
+ | Copyright (c) 2018 Christian B. Mendl
+ |
+ | Permission is hereby granted, free of charge, to any person obtaining a copy
+ | of this software and associated documentation files (the "Software"), to deal
+ | in the Software without restriction, including without limitation the rights
+ | to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ | copies of the Software, and to permit persons to whom the Software is
+ | furnished to do so, subject to the following conditions:
+ |
+ | The above copyright notice and this permission notice shall be included in all
+ | copies or substantial portions of the Software.
+ |
+ | THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ | IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ | FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ | AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ | LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ | OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ | SOFTWARE.
+*/
+
+
+svg {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.tensor {
+	cursor: default;
+}
+
+.tensorSymbol {
+	fill: black;
+}
+
+.tensorCaption {
+	fill: white;
+	text-anchor: middle;
+	font-weight: bold;
+}
+
+
+.tensorLegLine {
+	fill: #ffab00;
+	stroke: #ffab00;
+	stroke-width: 3;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+}
+
+.tensorLegLabel {
+	fill: red;
+	text-anchor: middle;
+	font-weight: bold;
+}
+
+.tensorLegTip {
+	fill: #00ff00;
+	stroke: #ffab00;
+	stroke-width: 3;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+}
+
+.tensorLegTipSnap {
+	fill: red;
+	stroke: #ffab00;
+	stroke-width: 3;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+}
+
+
+#addTensor {
+	cursor: grab;
+	cursor: -webkit-grab;
+	cursor: -moz-grab;
+}
+
+#addTensor:active {
+	cursor: grabbing;
+	cursor: -webkit-grabbing;
+	cursor: -moz-grabbing;
+}
+
+#addTensorSymbol {
+	fill: blue;
+}
+
+#addTensorCaption {
+	fill: white;
+	text-anchor: middle;
+	font-weight: bold;
+}
+
+
+.tooltip {
+	width: 150px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	padding: 5px 0;
+	border-radius: 6px;
+	pointer-events: none;
+	position: absolute;
+}
+
+
+#splitOverlay {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.5;
+	fill: black;
+}
+
+#splitCanvas {
+	fill: white;
+}
+
+.permLabel {
+	fill: red;
+	text-anchor: middle;
+	font-weight: bold;
+}
+
+.swapArrow {
+	fill: black;
+	text-anchor: middle;
+	font-weight: bold;
+	cursor: default;
+}
+
+
+#splitSlider {
+	cursor: ew-resize;
+}
+
+#splitSliderSeparator {
+	stroke: blue;
+	stroke-width: 3;
+	stroke-dasharray: 5, 2;
+}
+
+#splitSliderCaption {
+	fill: blue;
+	text-anchor: middle;
+	font-weight: bold;
+}
+
+
+.svgButton {
+	cursor: default;
+}
+
+.svgButtonRect {
+	fill: url(#buttonGradient);
+	stroke: #939393;
+}
+
+.svgButtonText {
+	text-anchor: middle;
+}
+
+
+.gridLine {
+	stroke: gainsboro;
+	stroke-width: 1;
+}
