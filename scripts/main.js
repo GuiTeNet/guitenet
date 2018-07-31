@@ -176,7 +176,7 @@ function createTensor(x, y, legIds)
 				.duration(500)
 				.style('opacity', 1);
 			tooltipDiv
-				.html('Ctrl + drag to add leg, Right-click to split')
+				.html('Shift + drag to add leg, Right-click to split')
 				.style('display', null)
 				.style('left', (d3.event.pageX + 15) + 'px')
 				.style('top',  (d3.event.pageY - 20) + 'px');
@@ -359,7 +359,7 @@ function snapLegTip(legId, x, y)
 let moveTensor;
 
 function tensorDragStarted(tdatum) {
-	if (d3.event.sourceEvent.ctrlKey) {
+	if (d3.event.sourceEvent.shiftKey) {
 		moveTensor = false;
 	}
 	else {
