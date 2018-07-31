@@ -368,7 +368,8 @@ function tensorDragStarted(tdatum) {
 
 	if (!moveTensor) {
 		// create new tensor leg
-		let [x, y] = snapGrid(d3.event.x, d3.event.y);
+		// enforce integer coordinates for leg tip (to identify joined legs using integer arithmetic)
+		let [x, y] = snapGrid(Math.round(d3.event.x), Math.round(d3.event.y));
 		let legId = createTensorLeg(this.getAttribute('x'), this.getAttribute('y'), x, y,
 			tdatum.id, tdatum.legIds.length);
 
@@ -418,7 +419,8 @@ function tensorDragged(tdatum)
 		let x1 = Number(leg.select('line').attr('x1'));
 		let y1 = Number(leg.select('line').attr('y1'));
 
-		let [x2, y2] = snapGrid(d3.event.x, d3.event.y);
+		// enforce integer coordinates for leg tip (to identify joined legs using integer arithmetic)
+		let [x2, y2] = snapGrid(Math.round(d3.event.x), Math.round(d3.event.y));
 
 		// try snapping to other leg tips
 		let s = snapLegTip(leg.datum().id, x2, y2);
@@ -467,7 +469,8 @@ function legDragged(d)
 {
 	// datum inherited from tensor leg
 
-	let [x, y] = snapGrid(d3.event.x, d3.event.y);
+	// enforce integer coordinates for leg tip (to identify joined legs using integer arithmetic)
+	let [x, y] = snapGrid(Math.round(d3.event.x), Math.round(d3.event.y));
 
 	// try snapping to other leg tips
 	let s = snapLegTip(d.id, x, y);
@@ -985,8 +988,9 @@ function performQRDecomposition(tid, nleftdims)
 		throw new Error('Number of left dimensions for QR splitting must be smaller than total number of dimensions.');
 	}
 
-	const x_ref = Number(tensor.attr('x'));
-	const y_ref = Number(tensor.attr('y'));
+	// use integer coordinates such that bond leg tips (see below) likewise have integer coordinates
+	const x_ref = Math.round(Number(tensor.attr('x')));
+	const y_ref = Math.round(Number(tensor.attr('y')));
 
 	// remove original tensor
 	tensor.remove();
