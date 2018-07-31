@@ -1,23 +1,25 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<meta charset='utf-8'>
+	<meta charset="utf-8">
 	<title>GuiTeNet</title>
 
+	<!-- GuiTeNet CSS -->
 	<link rel="stylesheet" type="text/css" href="styles/guitenet.css">
-
-	<script src='https://d3js.org/d3.v5.min.js'></script>
-	<script src='scripts/operations.js'></script>
-	<script src='scripts/backend.js'></script>
-	<script src='scripts/utils.js'></script>
 </head>
 
 <body>
 	<!-- elements required by GuiTeNet: SVG canvas and code output -->
-	<svg id='guitenetSvg' width='600' height='400'></svg>
-	<pre id='guitenetCode'>Generated Python code will appear here</pre>
+	<svg id="guitenetSvg" width="600" height="400"></svg>
+	<pre id="guitenetCode">Generated Python code will appear here</pre>
 
-	<!-- main GuiTeNet script -->
-	<script src='scripts/main.js'></script>
+	<!-- D3.js -->
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+
+	<!-- GuiTeNet scripts -->
+	<script src="scripts/operations.js"></script>
+	<script src="scripts/backend.js"></script>
+	<script src="scripts/utils.js"></script>
+	<script src="scripts/main.js"></script>
 </body>
 </html>
