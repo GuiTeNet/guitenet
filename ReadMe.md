@@ -3,6 +3,13 @@
 GuiTeNet is a graphical user interface for (quantum) tensor networks. It is written in JavaScript and uses the [D3.js](https://d3js.org) library for visualization.
 
 
+## Getting started
+
+GuiTeNet runs directly in a web browser, online at [guitenet.github.io](https://guitenet.github.io). Follow the [tutorial](https://guitenet.github.io/tutorial.html) to get started.
+
+To run GuiTeNet locally, clone the repository and open `index.html` in a web browser.
+
+
 ## Directory structure
 
 ```
