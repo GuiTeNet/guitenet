@@ -39,20 +39,28 @@ function mergeOverlapping(lists)
 	let merged = [];
 	while (sets.length > 0)
 	{
+		// merge into sets[0] as long as it overlaps with other sets
 		let x = sets[0];
 		let newsets = [];
+		let found_isect = false;
 		for (let i = 1; i < sets.length; i++) {
 			// intersection of x and sets[i]
-			let isect = new Set([...x].filter(z => sets[i].has(z)));
-			if (isect.size > 0) {
+			let isect = [...x].filter(z => sets[i].has(z));
+			if (isect.length > 0) {
 				x = new Set([...x, ...sets[i]]);
+				found_isect = true;
 			}
 			else {
 				newsets.push(sets[i]);
 			}
 		}
-		merged.push([...x].sort());
-		sets = newsets;
+		if (found_isect) {
+			sets = [x, ...newsets]
+		}
+		else {
+			merged.push([...x].sort(function (a, b) { return a - b }));
+			sets = newsets;
+		}
 	}
 
 	return merged;
